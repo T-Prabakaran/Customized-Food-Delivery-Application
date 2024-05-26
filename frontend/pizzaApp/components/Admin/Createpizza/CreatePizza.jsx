@@ -66,7 +66,7 @@ const PizzaForm = () => {
       formdata.append("base",pizzaData.base)
       formdata.append("sauce",pizzaData.sauce)
       axios
-      .post("http://localhost:3001/admin/createpizza",formdata)
+      .post("https://pizza-delivary-application.onrender.com/admin/createpizza",formdata)
       .then((response) => {
         console.log(response.data);
         history("/admin"); 

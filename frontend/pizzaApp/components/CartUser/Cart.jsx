@@ -12,7 +12,7 @@ function Cartuser() {
   console.log(myorders)
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/orders/userorders/${user.name}`)
+      .get(`https://pizza-delivary-application.onrender.com/orders/userorders/${user.name}`)
       .then((res) => {
         setMyOrders(res.data);
         calculateTotalAmount(res.data);
@@ -33,7 +33,7 @@ function Cartuser() {
   }
   const handleRemove = (ord) => {
     axios
-      .post(`http://localhost:3001/orders/clearorder/${ord._id}/${user.name}`)
+      .post(`https://pizza-delivary-application.onrender.com/orders/clearorder/${ord._id}/${user.name}`)
       .then((res) => {
         const updatedOrders = myorders.filter((order) => order._id !== ord._id);
         setMyOrders(updatedOrders);
@@ -85,7 +85,7 @@ function Cartuser() {
               className="img-tag"
               width="100px"
               height="200px"
-              src={`http://localhost:3001/images/` + ord.image}
+              src={`https://pizza-delivary-application.onrender.com/images/` + ord.image}
               alt="images"
               style={cartItemImageStyle}
             />

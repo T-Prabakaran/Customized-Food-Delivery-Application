@@ -54,7 +54,7 @@ const [sortOrder, setSortOrder] = useState('ascending');
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/admin/allpizzas");
+      const response = await axios.get("https://pizza-delivary-application.onrender.com/admin/allpizzas");
       setFoods(response.data);
     } catch (error) {
       console.error('Error fetching food data:', error);
@@ -177,7 +177,7 @@ const [sortOrder, setSortOrder] = useState('ascending');
    
 
     axios
-  .post(`http://localhost:3001/orders/createorder/${user.name}`, d)
+  .post(`https://pizza-delivary-application.onrender.com/orders/createorder/${user.name}`, d)
   .then((response) => {
     if (response.data.message === "error") {
       setmessage(`You have already placed this order ❌`);
@@ -233,7 +233,7 @@ const [sortOrder, setSortOrder] = useState('ascending');
       {filteredFoods.length > 0 ? (
         filteredFoods.map((food) => (
           <div key={food._id} style={foodItemStyle} onClick={() => handleFoodItemClick(food)}>
-            <img src={`http://localhost:3001/images/` + food.image} alt={food.name} style={foodItemImageStyle} />
+            <img src={`https://pizza-delivary-application.onrender.com/images/` + food.image} alt={food.name} style={foodItemImageStyle} />
             <h3 style={foodItemNameStyle}>{food.name}</h3>
             <p style={foodItemDescriptionStyle}>{food.description}</p>
             <p style={foodItemPriceStyle}>Price: {food.price} INR</p>

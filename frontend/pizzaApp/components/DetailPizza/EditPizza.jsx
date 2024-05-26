@@ -16,7 +16,7 @@ function EditPizzaForm() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/admin/detailpizzaadmin/${id}`)
+      .get(`https://pizza-delivary-application.onrender.com/admin/detailpizzaadmin/${id}`)
       .then((res) => setPizza(res.data))
       .catch((err) => console.log(err));
   }, [id]);
@@ -61,7 +61,7 @@ function EditPizzaForm() {
       formdata.append("base",pizza.base)
       formdata.append("sauce",pizza.sauce)
       axios
-      .put(`http://localhost:3001/admin/editpizzaadmin/${id}`,formdata)
+      .put(`https://pizza-delivary-application.onrender.com/admin/editpizzaadmin/${id}`,formdata)
       .then((res) => {
         setmsg(res.data.message)
         setInterval(() => {

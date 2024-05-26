@@ -8,7 +8,7 @@ function DetailP() {
     const history = useNavigate();
     useEffect(() => {
         axios
-          .get(`http://localhost:3001/admin/detailpizzaadmin/${id}`)
+          .get(`https://pizza-delivary-application.onrender.com/admin/detailpizzaadmin/${id}`)
           .then((res) => setDetailPizza(res.data))
           .catch((err) => console.log(err));
       }, [id]);
@@ -18,7 +18,7 @@ function DetailP() {
       }
   return (
     <div>
-    <img src={`http://localhost:3001/images/${detailpizza.image}`} alt={detailpizza.name} />
+    <img src={`https://pizza-delivary-application.onrender.com/images/${detailpizza.image}`} alt={detailpizza.name} />
     <h2>Pizza Details</h2>
     <h3>{detailpizza.name}</h3>
     <p>{detailpizza.description}</p>

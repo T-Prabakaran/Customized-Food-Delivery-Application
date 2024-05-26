@@ -24,7 +24,7 @@ const AdminLogin = () => {
     e.preventDefault();
   
     try {
-      const res = await axios.post("http://localhost:3001/admin/login", {
+      const res = await axios.post("https://pizza-delivary-application.onrender.com/admin/login", {
         email: formDatas.email,
         password: formDatas.password,
       });

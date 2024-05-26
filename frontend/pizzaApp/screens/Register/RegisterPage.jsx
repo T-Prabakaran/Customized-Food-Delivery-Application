@@ -14,7 +14,7 @@ const RegisterPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      const res = await axios.post("http://localhost:3001/auth/register", {
+      const res = await axios.post("https://pizza-delivary-application.onrender.com/auth/register", {
         name,
         email,
         password,

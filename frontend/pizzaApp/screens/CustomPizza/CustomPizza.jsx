@@ -70,7 +70,7 @@ const CustomPizzaPage = () => {
     };
     console.log('Pizza ordered!',customizedPizza);
     axios
-      .post('http://localhost:3001/user/custompizza', customizedPizza)
+      .post('https://pizza-delivary-application.onrender.com/user/custompizza', customizedPizza)
       .then((response) => {
         console.log('Pizza ordered!', response.data);
         setmessage("Pizza ordered and email sent to admin ✅")

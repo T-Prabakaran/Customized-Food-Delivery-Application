@@ -14,12 +14,12 @@ function PizzaDetails() {
   const user = JSON.parse(localStorage.getItem('user'));
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/admin/detailpizzaadmin/${id}`)
+      .get(`https://pizza-delivary-application.onrender.com/admin/detailpizzaadmin/${id}`)
       .then((res) => setPizza(res.data))
       .catch((err) => console.log(err));
   }, [id]);
 useEffect(()=>{
-  axios.get(`http://localhost:3001/home/pizza/${id}`)
+  axios.get(`https://pizza-delivary-application.onrender.com/home/pizza/${id}`)
   .then((res) => {
     setcomments(res.data)
     console.log(res.data)
@@ -27,7 +27,7 @@ useEffect(()=>{
 },[])
 const handleSendComment = () => {
   axios
-    .post(`http://localhost:3001/home/pizza/${id}/${user.name}`, {
+    .post(`https://pizza-delivary-application.onrender.com/home/pizza/${id}/${user.name}`, {
       comment: postcomments
     })
     .then((res) => {
@@ -36,7 +36,7 @@ const handleSendComment = () => {
     .catch((err) => console.log(err));
 };
 
-  const imageUrl = pizza ? `http://localhost:3001/images/${pizza.image}` : '';
+  const imageUrl = pizza ? `https://pizza-delivary-application.onrender.com/images/${pizza.image}` : '';
 
   const containerStyle = {
     display: 'flex',
@@ -145,7 +145,7 @@ const handleSendComment = () => {
    
 
     axios
-  .post(`http://localhost:3001/orders/createorder/${user.name}`, d)
+  .post(`https://pizza-delivary-application.onrender.com/orders/createorder/${user.name}`, d)
   .then((response) => {
     if (response.data.message === "error") {
       setmessage("You have already placed this order");
@@ -176,7 +176,7 @@ const handleSendComment = () => {
       {message && <h1>{message}</h1>}
       {pizza ? (
         <div style={detailsContainerStyle}>
-          <img src={"http://localhost:3001/images/"+pizza.image} alt={pizza.name} style={imageStyle} />
+          <img src={"https://pizza-delivary-application.onrender.com/images/"+pizza.image} alt={pizza.name} style={imageStyle} />
           <h2 style={titleStyle}>{pizza.name}</h2>
           <p style={descriptionStyle}>{pizza.description}</p>
           <div style={infoItemStyle}>

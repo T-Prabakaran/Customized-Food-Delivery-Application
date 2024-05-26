@@ -19,7 +19,7 @@ console.log(isadminauth,"from detail")
   }
   const handledelete=()=>{
     axios
-    .delete(`http://localhost:3001/admin/detailpizzaadmin/${id}`)
+    .delete(`https://pizza-delivary-application.onrender.com/admin/detailpizzaadmin/${id}`)
     .then(() => {
       history('/admin');
     })
@@ -28,7 +28,7 @@ console.log(isadminauth,"from detail")
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/admin/detailpizzaadmin/${id}`)
+      .get(`https://pizza-delivary-application.onrender.com/admin/detailpizzaadmin/${id}`)
       .then((res) => setDetailPizza(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -41,7 +41,7 @@ console.log(isadminauth,"from detail")
     <div className='detail_card'>
       <div className="detail_card_container">
         <div className="card_img">
-          <img src={`http://localhost:3001/images/${detailpizza.image}`} alt={detailpizza.name} /> 
+          <img src={`https://pizza-delivary-application.onrender.com/images/${detailpizza.image}`} alt={detailpizza.name} /> 
         </div>
         <div className="card_content">
           <div className="card_pizza_name">

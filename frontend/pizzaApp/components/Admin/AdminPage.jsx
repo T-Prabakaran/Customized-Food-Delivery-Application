@@ -12,7 +12,7 @@ console.log(isadminauth)
   const [userdetails, setUserdetails] = useState([]);
 
   useEffect(()=>{
-    axios.get("http://localhost:3001/admin/allpizzas")
+    axios.get("https://pizza-delivary-application.onrender.com/admin/allpizzas")
     .then((res)=>setUserdetails(res.data))
     .catch(err => console.log(err));
 
@@ -30,7 +30,7 @@ console.log(isadminauth)
           <div className='admin-contianer'>
            {userdetails.map(pizza => (
              <div key={pizza._id} className='pizza-block'>
-            <img className='img-tag' width="100px" height="200px" src={`http://localhost:3001/images/` + pizza.image} alt='images' />
+            <img className='img-tag' width="100px" height="200px" src={`https://pizza-delivary-application.onrender.com/images/` + pizza.image} alt='images' />
             <h1 className='name-pizza'  style={{color:"red"}}>{pizza.name}</h1>
             <h5 style={{ marginRight: 'auto', paddingLeft: '20px', fontSize: '20px' }}>
               Status: {pizza.status}

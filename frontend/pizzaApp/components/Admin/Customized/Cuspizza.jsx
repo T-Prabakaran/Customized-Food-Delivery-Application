@@ -26,7 +26,7 @@ function Cuspizza() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/admin/customizedpizzaadmin");
+      const response = await axios.get("https://pizza-delivary-application.onrender.com/admin/customizedpizzaadmin");
       setFoods(response.data.message);
       console.log(response.data);
     } catch (error) {
@@ -111,7 +111,7 @@ function Cuspizza() {
 
   const handleRemove = (ord) => {
     axios
-      .post(`http://localhost:3001/admin/clearpizzacus/${ord._id}`)
+      .post(`https://pizza-delivary-application.onrender.com/admin/clearpizzacus/${ord._id}`)
       .then((res) => {
         
         setMessage(res.data.message);

@@ -11,7 +11,7 @@ function Orders() {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3001/orders/myorders')
+      .get('https://pizza-delivary-application.onrender.com/orders/myorders')
       .then((res) => setOrders(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -21,7 +21,7 @@ function Orders() {
 
     // Call your API endpoint with the selected status and order ID
     axios
-      .post(`http://localhost:3001/orders/statuschange/${status}/${orderId}/${ordname}`)
+      .post(`https://pizza-delivary-application.onrender.com/orders/statuschange/${status}/${orderId}/${ordname}`)
       .then((res) => {
         console.log(res.data.message);
         setOrders(prevOrders => {
@@ -39,7 +39,7 @@ function Orders() {
 
   const handleRemove = (ord) => {
     axios
-      .post(`http://localhost:3001/orders/clearorder/${ord._id}`)
+      .post(`https://pizza-delivary-application.onrender.com/orders/clearorder/${ord._id}`)
       .then((res) => {
         
         setmessage(res.data.message);
@@ -72,7 +72,7 @@ function Orders() {
               className="img-tag"
               width="100px"
               height="200px"
-              src={`http://localhost:3001/images/` + ord.image}
+              src={`https://pizza-delivary-application.onrender.com/images/` + ord.image}
               alt="images"
             />
             <h1 className="name-pizza" style={{ color: 'red' }}>
